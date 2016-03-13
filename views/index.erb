@@ -23,8 +23,9 @@
 		<div>
 			Price: <%= p.price %> rub
 		</div>
+
 		<div>
-		<button class="btn btn-sm btn-success" onClick="add_to_cart();">Add to cart</button>
+		<button class="btn btn-sm btn-success" onClick="add_to_cart(<%= p.id %>);">Add to cart</button>
 		</div>
 
 	</div>
