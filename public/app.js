@@ -16,13 +16,9 @@ function add_to_cart(id)
 
 // считаем количество товаров в корзине
 var items = 0;
-
 for(var i in localStorage)
 {
-	localStorage[i]
 	items = items * 1 + localStorage[i] * 1
 }
-
     console.log(items);
-
 }
