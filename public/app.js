@@ -26,14 +26,14 @@ function update_orders_input()
 	$('#orders_input').val(orders);
 }
 
-// Отправка данных в кнопку на странице о заказе для пользователя
+// Отображение данных в кнопке на странице о заказе для пользователя
 function update_orders_button()
 {
 	var text = 'Cart (' + cart_get_item() + ')';
 		$('#orders_button').val(text);	
 }
 
-// считаем именно количество товаров по "product_" в корзине через функцию
+// считаем именно количество товаров по "product_" в корзине через функцию - будем отображать в кнопке
 function cart_get_item()
 {
 	var cnt = 0;
