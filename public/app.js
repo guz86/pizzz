@@ -14,8 +14,17 @@ function add_to_cart(id)
 	x = x * 1 + 1;
 	window.localStorage.setItem(key, x);
 
-	alert ('Items in your cart:  ' + cart_get_item())
+	// alert ('Items in your cart:  ' + cart_get_item())
+	update_orders_input();
 }
+
+// нужно добавлять значения в форму, и при добавлении новых заказов
+function update_orders_input()
+{
+	var orders = cart_get_orders();
+	$('#orders_input').val(orders);
+}
+
 
 // считаем именно количество товаров по "product_" в корзине через функцию
 function cart_get_item()
@@ -34,6 +43,8 @@ function cart_get_item()
 	}
     return cnt;
 }
+
+
 
 // делаем строчку с заказом
 function cart_get_orders()
