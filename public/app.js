@@ -13,6 +13,8 @@ function add_to_cart(id)
 	var x = window.localStorage.getItem(key);
 	x = x * 1 + 1;
 	window.localStorage.setItem(key, x);
+
+	alert ('Items in your cart: ' + cart_get_item())
 }
 
 // считаем именно количество товаров по "product_" в корзине через функцию
