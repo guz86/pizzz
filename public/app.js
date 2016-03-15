@@ -13,12 +13,22 @@ function add_to_cart(id)
 	var x = window.localStorage.getItem(key);
 	x = x * 1 + 1;
 	window.localStorage.setItem(key, x);
-
-// считаем количество товаров в корзине
-var items = 0;
-for(var i in localStorage)
-{
-	items = items * 1 + localStorage[i] * 1
 }
-    console.log(items);
+
+// считаем именно количество товаров по "product_" в корзине через функцию
+function cart_get_item()
+{
+	var cnt = 0;
+
+	for(var i = 0; i < window.localStorage.length; i++)
+	{
+		var key = window.localStorage.key(i); // ключ
+		 var value = window.localStorage.getItem(key); // значение по ключу
+
+		if(key.indexOf('product_') == 0)
+		{
+			cnt = cnt + value*1;
+		}
+	}
+    return cnt;
 }
