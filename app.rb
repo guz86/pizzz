@@ -19,5 +19,7 @@ get '/about' do
 end
 
 post '/cart' do
-  erb "Hello World"
+	@o = params[:orders]
+
+	erb :cart
 end
