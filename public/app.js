@@ -16,6 +16,7 @@ function add_to_cart(id)
 
 	// alert ('Items in your cart:  ' + cart_get_item())
 	update_orders_input();
+	update_orders_button();
 }
 
 // нужно добавлять значения в форму, и при добавлении новых заказов
@@ -25,6 +26,12 @@ function update_orders_input()
 	$('#orders_input').val(orders);
 }
 
+// Отправка данных в кнопку на странице о заказе для пользователя
+function update_orders_button()
+{
+	var text = 'Cart (' + cart_get_item() + ')';
+		$('#orders_button').val(text);	
+}
 
 // считаем именно количество товаров по "product_" в корзине через функцию
 function cart_get_item()
