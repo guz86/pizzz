@@ -58,6 +58,15 @@
 
 	</div>
 
+<!--перенесли инициализацию переменных, для того чтобы на всех страницах были видны покупки -->
+<script type="text/javascript">
+$(function(){
+	// добавлять данные из localStorage при перезагрузке страницы
+	update_orders_input();
+	update_orders_button();
+});
+</script>
+
 
   </body>
 </html>
