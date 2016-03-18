@@ -24,6 +24,19 @@ post '/cart' do
 	erb :cart
 end
 
+# cart_get_orders() возвращает product_1=4,product_2=8,product_3=3,
+#orders = "product_1=4,product_2=8,product_3=3,"
+#s1 = orders.split(/,/)
+#puts s1.inspect
+#s1.each do |x|
+#	s2 = x.split('=')
+#	s3 = s2[0].split('_')
+#	key = s3[1]
+#	value = s2[1]
+#	puts "Product id #{key}, number of items: #{value}"
+#end
+
+# для этого используют json а так мартышкин труд
 
 def parse_order_line orders_input
 	# данные о заказе прилитают сюда в виде: product_1=4,product_2=8,product_3=3,
