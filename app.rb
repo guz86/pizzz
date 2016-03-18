@@ -20,8 +20,8 @@ end
 
 post '/cart' do
 	# достаем значения из name из layout
-	orders_line = params[:orders]
-	@items = parse_orders_input orders_line
+	@orders_input = params[:orders]
+	@items = parse_orders_input @orders_input 
 	# заменяем id на данные о пицце
 	@items.each do |item|
 		# id, cnt
@@ -46,9 +46,9 @@ end
 
 # для этого используют json а так мартышкин труд
 
-def parse_orders_input orders_line
+def parse_orders_input orders_input
 	# данные о заказе прилитают сюда в виде: product_1=4,product_2=8,product_3=3,
-	s1 = orders_line.split(',')
+	s1 = orders_input.split(',')
 	# получаем массив с product_1=4
 	arr = []
 	s1.each do |x|
