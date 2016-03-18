@@ -21,7 +21,14 @@ end
 post '/cart' do
 	# достаем значения из name из layout
 	orders_line = params[:orders]
-	@orders = parse_orders_input orders_line
+	@items = parse_orders_input orders_line
+	# заменяем id на данные о пицце
+	@items.each do |item|
+		# id, cnt
+		#@post = Post.find(params[:id])
+		item[0] = Product.find(item[0])
+	end
+
 	erb :cart
 end
 
