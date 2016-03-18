@@ -19,8 +19,9 @@ get '/about' do
 end
 
 post '/cart' do
-	orders_input = params[:orders]
-	@orders = parse_order_line orders_input
+	# достаем значения из name из layout
+	orders_line = params[:orders]
+	@orders = parse_orders_input orders_line
 	erb :cart
 end
 
@@ -38,18 +39,18 @@ end
 
 # для этого используют json а так мартышкин труд
 
-def parse_order_line orders_input
+def parse_orders_input orders_line
 	# данные о заказе прилитают сюда в виде: product_1=4,product_2=8,product_3=3,
-	s1 = orders_input.split(',')
+	s1 = orders_line.split(',')
 	# получаем массив с product_1=4
 	arr = []
 	s1.each do |x|
 		s2 = x.split('=')
 		s3 = s2[0].split('_')
-		prod_id = s3[1]
-		#o = Product.find(prod_id)
-		amount = s2[1]
-		arr2 = [prod_id, amount]
+		id = s3[1]
+		#o = Product.find(id)
+		cnt = s2[1]
+		arr2 = [id, cnt]
 		arr.push arr2
 	end
 	return arr
