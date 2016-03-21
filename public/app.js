@@ -75,7 +75,10 @@ function cart_get_orders()
 
 function cancel_order()
 {
-	// вывод сообщения и неотправка формы, вызывается через return
-	alert('ouch');
+	// очистка localStorage и неотправка формы, вызывается через return
+	window.localStorage.clear();
+	// обновляем состояние кнопки
+	update_orders_input();
+	update_orders_button();
 	return false;
 }
