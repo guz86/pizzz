@@ -32,8 +32,7 @@ get '/day_order' do
 end
 
 post '/place-order' do
-	@ord = Order.new params[:order]
-	@ord.save
+	@ord = Order.create params[:order]
 	erb :place_order
 end
 
