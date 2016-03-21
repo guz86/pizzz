@@ -71,3 +71,11 @@ function cart_get_orders()
     return orders;
     // возвращает product_1=1,product_3=2,
 }
+
+
+function cancel_order()
+{
+	// вывод сообщения и неотправка формы, вызывается через return
+	alert('ouch');
+	return false;
+}

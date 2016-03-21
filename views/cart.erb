@@ -25,7 +25,7 @@
 
   	<tr> 
  		<td></td> 
- 		<td><%= total_price  %></td> 
+ 		<td>Total: <%= total_price  %> Rub.</td> 
  		<td><%= total_qty %></td> 
  	</tr> 
 
@@ -53,5 +53,5 @@
   </div>
 
 	<button type="submit" class="btn btn-success btn-lg">Place this order!</button>
-
+  <button class="btn btn-danger btn-lg" onclick = "return cancel_order()">Cancel</button>
 </form>
