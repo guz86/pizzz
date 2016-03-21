@@ -40,6 +40,12 @@ post '/cart' do
 	# достаем значения из name из layout
 	@orders_input = params[:orders_input]
 	@items = parse_orders_input @orders_input 
+
+	# Если корзина пуста, выводить страницу что заказа нет
+	if @items.length == 0
+		return erb :cart_is_empty
+	end
+	# выводим список продуктов
 	# заменяем id на данные о пицце
 	@items.each do |item|
 		# id, cnt

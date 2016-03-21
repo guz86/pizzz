@@ -81,6 +81,6 @@ function cancel_order()
 	update_orders_input();
 	update_orders_button();
 	// через plnkr.co подключили jQuery для замены содержимого div
-	$('#cart').text('Your cart in now empty!')
+	$('#cart').text('Your cart is now empty!')
 	return false;
 }
