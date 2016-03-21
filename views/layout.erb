@@ -42,7 +42,7 @@
 				<ul class="nav navbar-nav navbar-right">
 				<li>
 					<form action ="/cart" method="post">
-					<input id="orders_input" name="orders" type="hidden" />
+					<input id="orders_input" name="orders_input" type="hidden" />
 					<input type="submit" id="orders_button" class="btn btn-primary btn-lg" value="Cart... " />
 					</form>
 				</li>
@@ -63,6 +63,7 @@
 <script type="text/javascript">
 $(function(){
 	// добавлять данные из localStorage при перезагрузке страницы
+	// после очищения localStorage так же обновляется кнопка становится 0
 	update_orders_input();
 	update_orders_button();
 });

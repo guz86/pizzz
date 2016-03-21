@@ -33,12 +33,12 @@ end
 
 post '/place-order' do
 	@ord = Order.create params[:order]
-	erb :place_order
+	erb :order_placed
 end
 
 post '/cart' do
 	# достаем значения из name из layout
-	@orders_input = params[:orders]
+	@orders_input = params[:orders_input]
 	@items = parse_orders_input @orders_input 
 	# заменяем id на данные о пицце
 	@items.each do |item|
